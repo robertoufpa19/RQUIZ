@@ -163,47 +163,38 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    private void mudarProximaQuestao(){
-
+    private void mudarProximaQuestao() {
         posicaoDaPerguntaAtual++;
 
-        if((posicaoDaPerguntaAtual ) == listaQuestoes.size()){
-
-           exibirMensagem("RQuiz Finalizado!");
-            posicaoDaPerguntaAtual = 0; // iniciar novamente
-
+        if (posicaoDaPerguntaAtual == listaQuestoes.size()) {
+            exibirMensagem("Quiz Finalizado! Reiniciando...");
+            posicaoDaPerguntaAtual = 0; // Reiniciar a posição
         }
 
-        else if((posicaoDaPerguntaAtual + 1 ) <= listaQuestoes.size()){
+        // Reinicia a questão
+        opcaoSelecionadaPeloUsuario = "";
 
-            opcaoSelecionadaPeloUsuario = "";
+        resposta1.setBackgroundResource(R.drawable.bg_balao);
+        resposta1.setTextColor(Color.BLACK);
 
-            resposta1.setBackgroundResource(R.drawable.bg_balao);
-            resposta1.setTextColor(Color.BLACK);
+        resposta2.setBackgroundResource(R.drawable.bg_balao);
+        resposta2.setTextColor(Color.BLACK);
 
-            resposta2.setBackgroundResource(R.drawable.bg_balao);
-            resposta2.setTextColor(Color.BLACK);
+        resposta3.setBackgroundResource(R.drawable.bg_balao);
+        resposta3.setTextColor(Color.BLACK);
 
-            resposta3.setBackgroundResource(R.drawable.bg_balao);
-            resposta3.setTextColor(Color.BLACK);
+        resposta4.setBackgroundResource(R.drawable.bg_balao);
+        resposta4.setTextColor(Color.BLACK);
 
-            resposta4.setBackgroundResource(R.drawable.bg_balao);
-            resposta4.setTextColor(Color.BLACK);
-
-
-            qtdQuestao.setText((posicaoDaPerguntaAtual + 1)+"/"+listaQuestoes.size());
-            pergunta.setText(listaQuestoes.get(posicaoDaPerguntaAtual).getQuestao());
-            resposta1.setText(listaQuestoes.get(posicaoDaPerguntaAtual).getOpcao1());
-            resposta2.setText(listaQuestoes.get(posicaoDaPerguntaAtual).getOpcao2());
-            resposta3.setText(listaQuestoes.get(posicaoDaPerguntaAtual).getOpcao3());
-            resposta4.setText(listaQuestoes.get(posicaoDaPerguntaAtual).getOpcao4());
-
-        }else{
-
-            // abrirResultado();
-        }
-
+        // Atualizar os textos para a próxima questão
+        qtdQuestao.setText((posicaoDaPerguntaAtual + 1) + "/" + listaQuestoes.size());
+        pergunta.setText(listaQuestoes.get(posicaoDaPerguntaAtual).getQuestao());
+        resposta1.setText(listaQuestoes.get(posicaoDaPerguntaAtual).getOpcao1());
+        resposta2.setText(listaQuestoes.get(posicaoDaPerguntaAtual).getOpcao2());
+        resposta3.setText(listaQuestoes.get(posicaoDaPerguntaAtual).getOpcao3());
+        resposta4.setText(listaQuestoes.get(posicaoDaPerguntaAtual).getOpcao4());
     }
+
 
 
     private void revelarResposta(){
