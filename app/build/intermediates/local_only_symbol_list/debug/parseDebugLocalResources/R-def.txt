@@ -1,0 +1,23 @@
+R_DEF: Internal format may change without notice
+local
+color black
+color white
+drawable bg_balao
+drawable ic_launcher_background
+drawable ic_launcher_foreground
+id buttonProximo
+id buttonResposta1
+id buttonResposta2
+id buttonResposta3
+id buttonResposta4
+id main
+id textPerguntas
+id textQtdPerguntas
+layout activity_main
+mipmap ic_launcher
+mipmap ic_launcher_round
+string app_name
+style Base.Theme.RQuiz
+style Theme.RQuiz
+xml backup_rules
+xml data_extraction_rules
